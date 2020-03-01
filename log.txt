@@ -1,0 +1,158 @@
+http://192.168.124.42:8096/videos/def53be8-d0f1-71b8-3bad-0188f84ef09e/hls1/main/134.ts?DeviceId=TW96aWxsYS81LjAgKFdpbmRvd3MgTlQgMTAuMDsgV09XNjQpIEFwcGxlV2ViS2l0LzUzNy4zNiAoS0hUTUwsIGxpa2UgR2Vja28pIENocm9tZS83OC4wLjM5MDQuMTA4IFNhZmFyaS81MzcuMzZ8MTU4MzAzMzA4OTE2NA11&MediaSourceId=def53be8d0f171b83bad0188f84ef09e&VideoCodec=h264&AudioCodec=mp3,aac&AudioStreamIndex=1&VideoBitrate=139616000&AudioBitrate=384000&PlaySessionId=6042c539a6ea4e6fa51e87f05eb88cd6&api_key=8e60e01047384e1096c214d31fe059e9&TranscodingMaxAudioChannels=2&RequireAvc=false&Tag=c19118578293827f9e2060f4c26435f3&SegmentContainer=ts&MinSegments=1&BreakOnNonKeyFrames=True&h264-profile=high,main,baseline,constrainedbaseline,high10&h264-level=51
+
+{"Protocol":"File","Id":"def53be8d0f171b83bad0188f84ef09e","Path":"E:\\Pt\\TV\\我们这一天.第1季.This.Is.Us.S01.1080p.AMZN.WEBRip.AC3.x265.10bit-Yumi\\This.Is.Us.S01E01.1080p.AMZN.WEBRip.AC3.x265.10bit-Yumi.mkv","Type":"Default","Container":"mkv,webm","Size":1819388288,"Name":"This.Is.Us.S01E01.1080p.AMZN.WEBRip.AC3.x265.10bit-Yumi","IsRemote":false,"ETag":"c19118578293827f9e2060f4c26435f3","RunTimeTicks":25804800000,"ReadAtNativeFramerate":false,"IgnoreDts":false,"IgnoreIndex":false,"GenPtsInput":false,"SupportsTranscoding":true,"SupportsDirectStream":true,"SupportsDirectPlay":true,"IsInfiniteStream":false,"RequiresOpening":false,"RequiresClosing":false,"RequiresLooping":false,"SupportsProbing":true,"VideoType":"VideoFile","MediaStreams":[{"Codec":"hevc","TimeBase":"1/1000","CodecTimeBase":"1001/24000","VideoRange":"SDR","DisplayTitle":"1080P HEVC","IsInterlaced":false,"BitRate":5640464,"RefFrames":1,"IsDefault":true,"IsForced":false,"Height":1080,"Width":1920,"AverageFrameRate":23.9760246,"RealFrameRate":23.9760246,"Profile":"Main 10","Type":"Video","AspectRatio":"16:9","Index":0,"IsExternal":false,"IsTextSubtitleStream":false,"SupportsExternalStream":false,"PixelFormat":"yuv420p10le","Level":120},{"Codec":"eac3","Language":"eng","TimeBase":"1/1000","CodecTimeBase":"1/48000","DisplayTitle":"Eng Dolby Digital+ 6 ch Default","IsInterlaced":false,"Channels":6,"SampleRate":48000,"IsDefault":true,"IsForced":false,"Type":"Audio","Index":1,"IsExternal":false,"IsTextSubtitleStream":false,"SupportsExternalStream":false,"Level":0}],"Formats":[],"Bitrate":5640464,"RequiredHttpHeaders":{}}
+
+C:\Users\Administrator\Desktop\jellyfin_10.4.3\ffmpeg.exe -ss 00:06:42.000 -hwaccel d3d11va -noaccurate_seek -i file:"E:\Pt\TV\我们这一天.第1季.This.Is.Us.S01.1080p.AMZN.WEBRip.AC3.x265.10bit-Yumi\This.Is.Us.S01E01.1080p.AMZN.WEBRip.AC3.x265.10bit-Yumi.mkv" -map_metadata -1 -map_chapters -1 -threads 0 -map 0:0 -map 0:1 -map -0:s -codec:v:0 libx264 -pix_fmt yuv420p -preset veryfast -crf 23 -maxrate 11280928 -bufsize 22561856 -profile:v high -level 4.1 -x264opts:0 subme=0:me_range=4:rc_lookahead=10:me=dia:no_chroma_me:8x8dct=0:partitions=none -force_key_frames:0 "expr:gte(t,402+n_forced*3)" -vf "scale=trunc(min(max(iw\,ih*dar)\,1920)/2)*2:trunc(ow/dar/2)*2" -copyts -vsync -1 -codec:a:0 libmp3lame -ac 2 -ab 384000  -f hls -max_delay 5000000 -avoid_negative_ts disabled -start_at_zero -hls_time 3 -individual_header_trailer 0 -hls_segment_type mpegts -start_number 134 -hls_segment_filename "E:\jftemp\transcodes\transcodes\transcodes\transcodes\transcodes\transcodes\transcodes\transcodes\transcodes\transcodes\transcodes\transcodes\transcodes\transcodes\transcodes\5aefca909347d6741364cced7489df21%d.ts" -hls_playlist_type vod -hls_list_size 0 -y "E:\jftemp\transcodes\transcodes\transcodes\transcodes\transcodes\transcodes\transcodes\transcodes\transcodes\transcodes\transcodes\transcodes\transcodes\transcodes\transcodes\5aefca909347d6741364cced7489df21.m3u8"
+
+
+ffmpeg version 4.1.4 Copyright (c) 2000-2019 the FFmpeg developers
+  built with gcc 9.1.1 (GCC) 20190716
+  configuration: --enable-gpl --enable-version3 --enable-sdl2 --enable-fontconfig --enable-gnutls --enable-iconv --enable-libass --enable-libbluray --enable-libfreetype --enable-libmp3lame --enable-libopencore-amrnb --enable-libopencore-amrwb --enable-libopenjpeg --enable-libopus --enable-libshine --enable-libsnappy --enable-libsoxr --enable-libtheora --enable-libtwolame --enable-libvpx --enable-libwavpack --enable-libwebp --enable-libx264 --enable-libx265 --enable-libxml2 --enable-libzimg --enable-lzma --enable-zlib --enable-gmp --enable-libvidstab --enable-libvorbis --enable-libvo-amrwbenc --enable-libmysofa --enable-libspeex --enable-libxvid --enable-libaom --enable-libmfx --enable-amf --enable-ffnvcodec --enable-cuvid --enable-d3d11va --enable-nvenc --enable-nvdec --enable-dxva2 --enable-avisynth
+  libavutil      56. 22.100 / 56. 22.100
+  libavcodec     58. 35.100 / 58. 35.100
+  libavformat    58. 20.100 / 58. 20.100
+  libavdevice    58.  5.100 / 58.  5.100
+  libavfilter     7. 40.101 /  7. 40.101
+  libswscale      5.  3.100 /  5.  3.100
+  libswresample   3.  3.100 /  3.  3.100
+  libpostproc    55.  3.100 / 55.  3.100
+Guessed Channel Layout for Input Stream #0.1 : 5.1
+Input #0, matroska,webm, from 'file:E:\Pt\TV\我们这一天.第1季.This.Is.Us.S01.1080p.AMZN.WEBRip.AC3.x265.10bit-Yumi\This.Is.Us.S01E01.1080p.AMZN.WEBRip.AC3.x265.10bit-Yumi.mkv':
+  Metadata:
+    encoder         : libebml v1.3.4 + libmatroska v1.4.5
+    creation_time   : 2017-12-09T08:55:23.000000Z
+  Duration: 00:43:00.48, start: 0.000000, bitrate: 5640 kb/s
+    Stream #0:0: Video: hevc (Main 10), yuv420p10le(tv), 1920x1080 [SAR 1:1 DAR 16:9], 23.98 fps, 23.98 tbr, 1k tbn, 23.98 tbc (default)
+    Metadata:
+      BPS             : 4998934
+      BPS-eng         : 4998934
+      DURATION        : 00:43:00.328000000
+      DURATION-eng    : 00:43:00.328000000
+      NUMBER_OF_FRAMES: 61866
+      NUMBER_OF_FRAMES-eng: 61866
+      NUMBER_OF_BYTES : 1612361317
+      NUMBER_OF_BYTES-eng: 1612361317
+      _STATISTICS_WRITING_APP: mkvmerge v9.9.0 ('Pick Up') 64bit
+      _STATISTICS_WRITING_APP-eng: mkvmerge v9.9.0 ('Pick Up') 64bit
+      _STATISTICS_WRITING_DATE_UTC: 2017-12-09 08:55:23
+      _STATISTICS_WRITING_DATE_UTC-eng: 2017-12-09 08:55:23
+      _STATISTICS_TAGS: BPS DURATION NUMBER_OF_FRAMES NUMBER_OF_BYTES
+      _STATISTICS_TAGS-eng: BPS DURATION NUMBER_OF_FRAMES NUMBER_OF_BYTES
+    Stream #0:1(eng): Audio: eac3, 48000 Hz, 5.1, fltp (default)
+    Metadata:
+      BPS             : 640000
+      BPS-eng         : 640000
+      DURATION        : 00:43:00.480000000
+      DURATION-eng    : 00:43:00.480000000
+      NUMBER_OF_FRAMES: 80640
+      NUMBER_OF_FRAMES-eng: 80640
+      NUMBER_OF_BYTES : 206438400
+      NUMBER_OF_BYTES-eng: 206438400
+      _STATISTICS_WRITING_APP: mkvmerge v9.9.0 ('Pick Up') 64bit
+      _STATISTICS_WRITING_APP-eng: mkvmerge v9.9.0 ('Pick Up') 64bit
+      _STATISTICS_WRITING_DATE_UTC: 2017-12-09 08:55:23
+      _STATISTICS_WRITING_DATE_UTC-eng: 2017-12-09 08:55:23
+      _STATISTICS_TAGS: BPS DURATION NUMBER_OF_FRAMES NUMBER_OF_BYTES
+      _STATISTICS_TAGS-eng: BPS DURATION NUMBER_OF_FRAMES NUMBER_OF_BYTES
+Stream mapping:
+  Stream #0:0 -> #0:0 (hevc (native) -> h264 (libx264))
+  Stream #0:1 -> #0:1 (eac3 (native) -> mp3 (libmp3lame))
+Press [q] to stop, [?] for help
+[libx264 @ 000002715e9f8ac0] using SAR=1/1
+[libx264 @ 000002715e9f8ac0] using cpu capabilities: MMX2 SSE2Fast SSSE3 SSE4.2 AVX FMA3 BMI2 AVX2
+[libx264 @ 000002715e9f8ac0] profile Main, level 4.1, 4:2:0, 8-bit
+[libx264 @ 000002715e9f8ac0] 264 - core 157 r2970 5493be8 - H.264/MPEG-4 AVC codec - Copyleft 2003-2019 - http://www.videolan.org/x264.html - options: cabac=1 ref=1 deblock=1:0:0 analyse=0x1:0 me=dia subme=0 psy=1 psy_rd=1.00:0.00 mixed_ref=0 me_range=4 chroma_me=0 trellis=0 8x8dct=0 cqm=0 deadzone=21,11 fast_pskip=1 chroma_qp_offset=0 threads=6 lookahead_threads=1 sliced_threads=0 nr=0 decimate=1 interlaced=0 bluray_compat=0 constrained_intra=0 bframes=3 b_pyramid=2 b_adapt=1 b_bias=0 direct=1 weightb=1 open_gop=0 weightp=1 keyint=250 keyint_min=23 scenecut=40 intra_refresh=0 rc_lookahead=10 rc=crf mbtree=1 crf=23.0 qcomp=0.60 qpmin=0 qpmax=69 qpstep=4 vbv_maxrate=11280 vbv_bufsize=22561 crf_max=0.0 nal_hrd=none filler=0 ip_ratio=1.40 aq=1:1.00
+[hls @ 000002715e9f5d00] Opening 'E:\jftemp\transcodes\transcodes\transcodes\transcodes\transcodes\transcodes\transcodes\transcodes\transcodes\transcodes\transcodes\transcodes\transcodes\transcodes\transcodes\5aefca909347d6741364cced7489df21134.ts' for writing
+Output #0, hls, to 'E:\jftemp\transcodes\transcodes\transcodes\transcodes\transcodes\transcodes\transcodes\transcodes\transcodes\transcodes\transcodes\transcodes\transcodes\transcodes\transcodes\5aefca909347d6741364cced7489df21.m3u8':
+  Metadata:
+    encoder         : Lavf58.20.100
+    Stream #0:0: Video: h264 (libx264), yuv420p, 1920x1080 [SAR 1:1 DAR 16:9], q=-1--1, 23.98 fps, 90k tbn, 23.98 tbc (default)
+    Metadata:
+      encoder         : Lavc58.35.100 libx264
+    Side data:
+      cpb: bitrate max/min/avg: 11280000/0/0 buffer size: 22561000 vbv_delay: -1
+    Stream #0:1: Audio: mp3 (libmp3lame), 48000 Hz, stereo, fltp, 384 kb/s (default)
+    Metadata:
+      encoder         : Lavc58.35.100 libmp3lame
+frame=   17 fps=0.0 q=0.0 size=N/A time=00:06:41.23 bitrate=N/A speed= 763x    
+frame=   38 fps= 37 q=28.0 size=N/A time=00:06:42.21 bitrate=N/A speed= 389x    
+frame=   59 fps= 38 q=28.0 size=N/A time=00:06:42.98 bitrate=N/A speed= 259x    
+frame=   83 fps= 40 q=28.0 size=N/A time=00:06:44.20 bitrate=N/A speed= 197x    
+frame=  111 fps= 43 q=28.0 size=N/A time=00:06:45.16 bitrate=N/A speed= 156x    
+frame=  137 fps= 44 q=28.0 size=N/A time=00:06:46.44 bitrate=N/A speed= 131x    
+frame=  163 fps= 45 q=28.0 size=N/A time=00:06:47.30 bitrate=N/A speed= 112x    
+[hls @ 000002715e9f5d00] Opening 'E:\jftemp\transcodes\transcodes\transcodes\transcodes\transcodes\transcodes\transcodes\transcodes\transcodes\transcodes\transcodes\transcodes\transcodes\transcodes\transcodes\5aefca909347d6741364cced7489df21135.ts' for writing
+frame=  187 fps= 45 q=28.0 size=N/A time=00:06:48.33 bitrate=N/A speed=98.7x    
+frame=  209 fps= 45 q=28.0 size=N/A time=00:06:49.39 bitrate=N/A speed=  88x    
+frame=  234 fps= 45 q=28.0 size=N/A time=00:06:50.42 bitrate=N/A speed=79.6x    
+frame=  256 fps= 45 q=28.0 size=N/A time=00:06:51.28 bitrate=N/A speed=72.6x    
+frame=  281 fps= 46 q=28.0 size=N/A time=00:06:52.29 bitrate=N/A speed=66.9x    
+frame=  305 fps= 46 q=28.0 size=N/A time=00:06:53.23 bitrate=N/A speed=61.8x    
+frame=  329 fps= 46 q=28.0 size=N/A time=00:06:54.19 bitrate=N/A speed=57.6x    
+frame=  353 fps= 46 q=28.0 size=N/A time=00:06:55.22 bitrate=N/A speed=53.9x    
+[hls @ 000002715e9f5d00] Opening 'E:\jftemp\transcodes\transcodes\transcodes\transcodes\transcodes\transcodes\transcodes\transcodes\transcodes\transcodes\transcodes\transcodes\transcodes\transcodes\transcodes\5aefca909347d6741364cced7489df21136.ts' for writing
+frame=  380 fps= 46 q=28.0 size=N/A time=00:06:56.49 bitrate=N/A speed=50.7x    
+frame=  403 fps= 46 q=28.0 size=N/A time=00:06:57.52 bitrate=N/A speed=47.8x    
+frame=  427 fps= 46 q=28.0 size=N/A time=00:06:58.44 bitrate=N/A speed=45.3x    
+frame=  453 fps= 46 q=28.0 size=N/A time=00:06:59.49 bitrate=N/A speed=  43x    
+frame=  478 fps= 47 q=28.0 size=N/A time=00:07:00.60 bitrate=N/A speed=  41x    
+frame=  502 fps= 47 q=28.0 size=N/A time=00:07:01.60 bitrate=N/A speed=39.2x    
+frame=  522 fps= 46 q=28.0 size=N/A time=00:07:02.47 bitrate=N/A speed=37.5x    
+frame=  540 fps= 46 q=28.0 size=N/A time=00:07:03.04 bitrate=N/A speed=  36x    
+frame=  561 fps= 46 q=28.0 size=N/A time=00:07:04.08 bitrate=N/A speed=34.6x    
+frame=  584 fps= 46 q=28.0 size=N/A time=00:07:04.84 bitrate=N/A speed=33.2x    
+[hls @ 000002715e9f5d00] Opening 'E:\jftemp\transcodes\transcodes\transcodes\transcodes\transcodes\transcodes\transcodes\transcodes\transcodes\transcodes\transcodes\transcodes\transcodes\transcodes\transcodes\5aefca909347d6741364cced7489df21137.ts' for writing
+frame=  610 fps= 46 q=28.0 size=N/A time=00:07:06.12 bitrate=N/A speed=  32x    
+frame=  632 fps= 46 q=28.0 size=N/A time=00:07:06.79 bitrate=N/A speed=30.9x    
+frame=  656 fps= 46 q=28.0 size=N/A time=00:07:07.84 bitrate=N/A speed=29.9x    
+frame=  682 fps= 46 q=28.0 size=N/A time=00:07:09.09 bitrate=N/A speed=  29x    
+frame=  708 fps= 46 q=28.0 size=N/A time=00:07:10.10 bitrate=N/A speed=  28x    
+frame=  732 fps= 46 q=28.0 size=N/A time=00:07:11.11 bitrate=N/A speed=27.2x    
+frame=  758 fps= 46 q=28.0 size=N/A time=00:07:12.24 bitrate=N/A speed=26.4x    
+frame=  784 fps= 46 q=28.0 size=N/A time=00:07:13.29 bitrate=N/A speed=25.7x    
+frame=  812 fps= 47 q=28.0 size=N/A time=00:07:14.37 bitrate=N/A speed=  25x    
+frame=  837 fps= 47 q=28.0 size=N/A time=00:07:15.50 bitrate=N/A speed=24.3x    
+[hls @ 000002715e9f5d00] Opening 'E:\jftemp\transcodes\transcodes\transcodes\transcodes\transcodes\transcodes\transcodes\transcodes\transcodes\transcodes\transcodes\transcodes\transcodes\transcodes\transcodes\5aefca909347d6741364cced7489df21138.ts' for writing
+frame=  862 fps= 47 q=28.0 size=N/A time=00:07:16.53 bitrate=N/A speed=23.7x    
+frame=  887 fps= 47 q=28.0 size=N/A time=00:07:17.44 bitrate=N/A speed=23.1x    
+frame=  913 fps= 47 q=28.0 size=N/A time=00:07:18.55 bitrate=N/A speed=22.6x    
+frame=  937 fps= 47 q=28.0 size=N/A time=00:07:19.53 bitrate=N/A speed=22.1x    
+[hls @ 000002715e9f5d00] Opening 'E:\jftemp\transcodes\transcodes\transcodes\transcodes\transcodes\transcodes\transcodes\transcodes\transcodes\transcodes\transcodes\transcodes\transcodes\transcodes\transcodes\5aefca909347d6741364cced7489df21139.ts' for writing
+frame=  963 fps= 47 q=28.0 size=N/A time=00:07:20.85 bitrate=N/A speed=21.6x    
+frame=  989 fps= 47 q=28.0 size=N/A time=00:07:21.86 bitrate=N/A speed=21.1x    
+frame= 1012 fps= 47 q=28.0 size=N/A time=00:07:22.70 bitrate=N/A speed=20.6x    
+frame= 1034 fps= 47 q=28.0 size=N/A time=00:07:23.68 bitrate=N/A speed=20.2x    
+frame= 1061 fps= 47 q=28.0 size=N/A time=00:07:24.69 bitrate=N/A speed=19.8x    
+frame= 1088 fps= 47 q=28.0 size=N/A time=00:07:25.96 bitrate=N/A speed=19.4x    
+frame= 1113 fps= 47 q=28.0 size=N/A time=00:07:26.90 bitrate=N/A speed=  19x    
+frame= 1141 fps= 48 q=28.0 size=N/A time=00:07:28.15 bitrate=N/A speed=18.7x    
+frame= 1165 fps= 48 q=28.0 size=N/A time=00:07:29.20 bitrate=N/A speed=18.3x    
+frame= 1188 fps= 48 q=28.0 size=N/A time=00:07:30.21 bitrate=N/A speed=  18x    
+[hls @ 000002715e9f5d00] Opening 'E:\jftemp\transcodes\transcodes\transcodes\transcodes\transcodes\transcodes\transcodes\transcodes\transcodes\transcodes\transcodes\transcodes\transcodes\transcodes\transcodes\5aefca909347d6741364cced7489df21140.ts' for writing
+frame= 1209 fps= 47 q=28.0 size=N/A time=00:07:30.98 bitrate=N/A speed=17.7x    
+frame= 1234 fps= 47 q=28.0 size=N/A time=00:07:32.13 bitrate=N/A speed=17.4x    
+frame= 1259 fps= 47 q=28.0 size=N/A time=00:07:33.16 bitrate=N/A speed=17.1x    
+frame= 1285 fps= 48 q=28.0 size=N/A time=00:07:34.29 bitrate=N/A speed=16.8x    
+frame= 1311 fps= 48 q=28.0 size=N/A time=00:07:35.18 bitrate=N/A speed=16.5x    
+frame= 1334 fps= 48 q=25.0 size=N/A time=00:07:36.21 bitrate=N/A speed=16.3x    
+[hls @ 000002715e9f5d00] Opening 'E:\jftemp\transcodes\transcodes\transcodes\transcodes\transcodes\transcodes\transcodes\transcodes\transcodes\transcodes\transcodes\transcodes\transcodes\transcodes\transcodes\5aefca909347d6741364cced7489df21141.ts' for writing
+frame= 1357 fps= 48 q=28.0 size=N/A time=00:07:37.20 bitrate=N/A speed=  16x    
+frame= 1376 fps= 47 q=28.0 size=N/A time=00:07:37.96 bitrate=N/A speed=15.8x    
+frame= 1399 fps= 47 q=28.0 size=N/A time=00:07:38.83 bitrate=N/A speed=15.5x    
+frame= 1424 fps= 47 q=28.0 size=N/A time=00:07:39.96 bitrate=N/A speed=15.3x    
+[hls @ 000002715e9f5d00] Cannot use rename on non file protocol, this may lead to races and temporary partial files
+frame= 1447 fps= 47 q=-1.0 Lsize=N/A time=00:07:40.94 bitrate=N/A speed=  15x    
+video:8781kB audio:2369kB subtitle:0kB other streams:0kB global headers:0kB muxing overhead: unknown
+[libx264 @ 000002715e9f8ac0] frame I:8     Avg QP:17.68  size: 95149
+[libx264 @ 000002715e9f8ac0] frame P:369   Avg QP:19.89  size: 14482
+[libx264 @ 000002715e9f8ac0] frame B:1070  Avg QP:21.88  size:  2697
+[libx264 @ 000002715e9f8ac0] consecutive B-frames:  1.0%  0.8%  0.8% 97.3%
+[libx264 @ 000002715e9f8ac0] mb I  I16..4: 55.8%  0.0% 44.2%
+[libx264 @ 000002715e9f8ac0] mb P  I16..4: 13.7%  0.0%  0.0%  P16..4: 36.6%  0.0%  0.0%  0.0%  0.0%    skip:49.7%
+[libx264 @ 000002715e9f8ac0] mb B  I16..4:  1.0%  0.0%  0.0%  B16..8:  9.3%  0.0%  0.0%  direct: 4.9%  skip:84.8%  L0:41.1% L1:52.6% BI: 6.3%
+[libx264 @ 000002715e9f8ac0] coded y,uvDC,uvAC intra: 17.4% 40.7% 7.4% inter: 2.2% 8.6% 0.0%
+[libx264 @ 000002715e9f8ac0] i16 v,h,dc,p: 49% 22% 14% 15%
+[libx264 @ 000002715e9f8ac0] i4 v,h,dc,ddl,ddr,vr,hd,vl,hu: 26% 21% 15% 10%  6%  5%  5%  5%  6%
+[libx264 @ 000002715e9f8ac0] i8c dc,h,v,p: 46% 21% 26%  7%
+[libx264 @ 000002715e9f8ac0] Weighted P-Frames: Y:0.3% UV:0.3%
+[libx264 @ 000002715e9f8ac0] kb/s:1191.76
